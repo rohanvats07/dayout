@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Will you go out with me?</title>
+    <style>
+        body {
+            background-color: #FFE4E1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            color: #FF69B4;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        #yesBtn {
+            background-color: #90EE90;
+            color: white;
+        }
+        
+        #noBtn {
+            background-color: #FFB6C1;
+            color: white;
+            position: absolute;
+        }
+        
+        #datePlan {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #datePlan h2 {
+            color: #FF69B4;
+            margin-bottom: 20px;
+        }
+        
+        .plan-details {
+            font-size: 1.5em;
+            color: #4A4A4A;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="proposal">
+            <h1>Will you go out with me? 💝</h1>
+            <div class="buttons">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+        
+        <div id="datePlan">
+            <h2>Yay! Here's our date plan 🎉</h2>
+            <div class="plan-details">
+                <p>✨ Surajkund Mela ✨</p>
+                <p>On 15/02/2025</p>
+                <p>Baby🤗🤗🤗 I am so much excited to spend time with you.💖💖💖</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const proposal = document.getElementById('proposal');
+        const datePlan = document.getElementById('datePlan');
+
+        // Move the No button when hovered
+        noBtn.addEventListener('mouseover', () => {
+            const maxX = window.innerWidth - noBtn.clientWidth;
+            const maxY = window.innerHeight - noBtn.clientHeight;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+
+        // Show date plan when Yes is clicked
+        yesBtn.addEventListener('click', () => {
+            proposal.style.display = 'none';
+            datePlan.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
